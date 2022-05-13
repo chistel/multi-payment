@@ -47,7 +47,7 @@ return [
 
 ## Usage
 
-check out it usage in the sample repository
+check out it usage in the [Comprehensive demo repository](https://github.com/chistel/payment-demo) 
 
 ## Tests
 
