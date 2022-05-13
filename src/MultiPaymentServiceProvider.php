@@ -14,9 +14,7 @@ namespace Chistel\MultiPayment;
 use Illuminate\Support\ServiceProvider;
 
 /**
- * Class MultiPaymentServiceProvider
- *
- * @package Chistel\MultiPayment
+ * Class MultiPaymentServiceProvider.
  */
 class MultiPaymentServiceProvider extends ServiceProvider
 {
@@ -25,7 +23,7 @@ class MultiPaymentServiceProvider extends ServiceProvider
         if ($this->app->runningInConsole()) {
             $this->publishes(
                 [
-                    __DIR__ . '/../config/multi-payment.php' => config_path('multi-payment.php'),
+                    __DIR__.'/../config/multi-payment.php' => config_path('multi-payment.php'),
                 ],
                 'config'
             );

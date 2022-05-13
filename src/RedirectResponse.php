@@ -70,11 +70,13 @@ class RedirectResponse implements ResponseInterface
 
     /**
      * @param array $data
+     *
      * @return RedirectResponse
      */
     public function setData(array $data = []): static
     {
         $this->data = $data;
+
         return $this;
     }
 

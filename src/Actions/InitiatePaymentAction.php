@@ -29,10 +29,12 @@ class InitiatePaymentAction
     /**
      * @param $payer
      * @param string $gatewayProvider
-     * @param array $purchaseData
-     * @return Response|RedirectResponse
+     * @param array  $purchaseData
+     *
      * @throws InvalidGatewayDriverException
      * @throws UnSupportedGatewayException
+     *
+     * @return Response|RedirectResponse
      */
     public function execute($payer, string $gatewayProvider, array $purchaseData): Response|RedirectResponse
     {

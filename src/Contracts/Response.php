@@ -14,42 +14,42 @@ namespace Chistel\MultiPayment\Contracts;
 interface Response
 {
     /**
-     * Return the transaction reference returned by the payment provider
+     * Return the transaction reference returned by the payment provider.
      *
      * @return string|null
      */
     public function transactionRef(): ?string;
 
     /**
-     * Determine if the payment was successful
+     * Determine if the payment was successful.
      *
      * @return bool
      */
     public function success(): bool;
 
     /**
-     * Determine if the payment failed
+     * Determine if the payment failed.
      *
      * @return bool
      */
     public function failed(): bool;
 
     /**
-     * Return the message success/error returned by the payment provider
+     * Return the message success/error returned by the payment provider.
      *
      * @return string
      */
     public function message(): string;
 
     /**
-     * Returns the gateway charged amount - formatted
+     * Returns the gateway charged amount - formatted.
      *
      * @return float
      */
     public function amount(): float;
 
     /**
-     * Return the currency used
+     * Return the currency used.
      *
      * @return string
      */

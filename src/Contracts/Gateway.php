@@ -17,14 +17,14 @@ use Chistel\MultiPayment\Response;
 interface Gateway
 {
     /**
-     * Get test mode
+     * Get test mode.
      *
      * @return bool
      */
     public function getTestMode();
 
     /**
-     * Set test mode
+     * Set test mode.
      *
      * @param $mode
      *
@@ -33,14 +33,14 @@ interface Gateway
     public function setTestMode($mode);
 
     /**
-     * Get currency code
+     * Get currency code.
      *
      * @return string|null
      */
     public function getCurrency(): ?string;
 
     /**
-     * Set the currency code
+     * Set the currency code.
      *
      * @param string $currency
      *
@@ -49,15 +49,16 @@ interface Gateway
     public function setCurrency($currency);
 
     /**
-     * Handle making the purchase
+     * Handle making the purchase.
      *
      * @param array $data
+     *
      * @return Response|RedirectResponse
      */
     public function purchase(array $data = []): Response|RedirectResponse;
 
     /**
-     * Handles completion/verification of payment
+     * Handles completion/verification of payment.
      *
      * @return mixed
      */

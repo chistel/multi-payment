@@ -35,7 +35,7 @@ class PaymentWasUnsuccessful
     public function __construct($gateway, $payer, Response $response)
     {
         $this->gateway = $gateway;
-        $this->payer= $payer;
+        $this->payer = $payer;
         $this->response = $response;
     }
 }
