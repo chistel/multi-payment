@@ -2,7 +2,7 @@
 
 if (!function_exists('supportedPaymentGateways')) {
     /**
-     * Return all supported gateway
+     * Return all supported gateway.
      *
      * @return array
      */
@@ -12,7 +12,7 @@ if (!function_exists('supportedPaymentGateways')) {
 
         foreach (config('multi-payment.gateways') as $key => $value) {
             $gateways[$key] = [
-                'name' => $value['name']
+                'name' => $value['name'],
             ];
         }
 

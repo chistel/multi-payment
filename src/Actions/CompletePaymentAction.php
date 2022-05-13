@@ -29,9 +29,11 @@ class CompletePaymentAction
      * @param string $gatewayProvider
      * @param $payer
      * @param array $gatewayParameters
-     * @return Response
+     *
      * @throws InvalidGatewayDriverException
      * @throws UnSupportedGatewayException
+     *
+     * @return Response
      */
     public function execute(string $gatewayProvider, $payer, array $gatewayParameters = []): Response
     {

@@ -16,11 +16,11 @@ use Chistel\MultiPayment\Contracts\Response as ResponseInterface;
 class Response implements ResponseInterface
 {
     /**
-     * @param bool $success
+     * @param bool        $success
      * @param string|null $message
      * @param string|null $transactionRef
-     * @param float $amount
-     * @param string $currency
+     * @param float       $amount
+     * @param string      $currency
      */
     public function __construct(
         protected bool $success,
@@ -32,7 +32,7 @@ class Response implements ResponseInterface
     }
 
     /**
-     * Return the transaction reference returned by the payment provider
+     * Return the transaction reference returned by the payment provider.
      *
      * @return string|null
      */
@@ -42,7 +42,7 @@ class Response implements ResponseInterface
     }
 
     /**
-     * Determine if the payment was successful
+     * Determine if the payment was successful.
      *
      * @return bool
      */
@@ -52,7 +52,7 @@ class Response implements ResponseInterface
     }
 
     /**
-     * Determine if the payment failed
+     * Determine if the payment failed.
      *
      * @return bool
      */
@@ -62,7 +62,7 @@ class Response implements ResponseInterface
     }
 
     /**
-     * Return the message success/error returned by the payment provider
+     * Return the message success/error returned by the payment provider.
      *
      * @return string
      */
@@ -72,7 +72,7 @@ class Response implements ResponseInterface
     }
 
     /**
-     * Return the amount charged
+     * Return the amount charged.
      *
      * @return float
      */
@@ -82,7 +82,7 @@ class Response implements ResponseInterface
     }
 
     /**
-     * Return the currency used
+     * Return the currency used.
      *
      * @return string
      */

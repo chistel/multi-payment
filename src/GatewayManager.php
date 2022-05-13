@@ -17,13 +17,15 @@ use Chistel\MultiPayment\Exceptions\UnSupportedGatewayException;
 class GatewayManager
 {
     /**
-     * Return a gateway object based on account gateway setting
+     * Return a gateway object based on account gateway setting.
      *
      * @param $paymentMethod
      * @param array $data
-     * @return object
+     *
      * @throws InvalidGatewayDriverException
      * @throws UnSupportedGatewayException
+     *
+     * @return object
      */
     public function create($paymentMethod, array $data = []): object
     {
@@ -43,6 +45,7 @@ class GatewayManager
         if (!($gateway = config("multi-payment.gateways.{$name}"))) {
             throw new UnSupportedGatewayException('Payment gateway not supported');
         }
+
         return $gateway;
     }
 }

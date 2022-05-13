@@ -12,14 +12,13 @@
 namespace Chistel\MultiPayment;
 
 use Chistel\MultiPayment\Contracts\Gateway;
-use Exception;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Date;
 
 abstract class AbstractGateway
 {
     /**
-     * Length of time to store payment info in cache
+     * Length of time to store payment info in cache.
      *
      * @const integer
      */
@@ -28,7 +27,7 @@ abstract class AbstractGateway
     /** @var Gateway */
     protected $gateway;
 
-    /** @var  string|int */
+    /** @var string|int */
     protected $payer;
 
     public function setPayer(string|int $payer): static
@@ -40,6 +39,7 @@ abstract class AbstractGateway
 
     /**
      * @param array $parameters
+     *
      * @return AbstractGateway
      */
     public function setGatewayParameters(array $parameters = []): static
@@ -50,7 +50,7 @@ abstract class AbstractGateway
     }
 
     /**
-     * Cache payment parameters for off-site payment handling
+     * Cache payment parameters for off-site payment handling.
      *
      * @param array $params
      */
@@ -63,7 +63,7 @@ abstract class AbstractGateway
     }
 
     /**
-     * Clear cached payment parameters
+     * Clear cached payment parameters.
      */
     protected function clearParams(): void
     {
@@ -72,13 +72,14 @@ abstract class AbstractGateway
 
     protected function cacheKey(): string
     {
-        return 'payment-' . $this->payer;
+        return 'payment-'.$this->payer;
     }
 
     /**
-     * Retrieve caches payment parameters for off-site payment handling
+     * Retrieve caches payment parameters for off-site payment handling.
      *
      * @param bool $returnException
+     *
      * @return array|null
      */
     protected function retrieveParams(bool $returnException = true): null|array
@@ -94,7 +95,7 @@ abstract class AbstractGateway
     }
 
     /**
-     * Determine is test mode is on/off
+     * Determine is test mode is on/off.
      *
      * @return bool
      */
