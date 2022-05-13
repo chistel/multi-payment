@@ -1,4 +1,6 @@
 # Multi-payment for laravel
+[![Latest Stable Version](http://poser.pugx.org/chistel/multi-payment/v)](https://packagist.org/packages/chistel/multi-payment) [![Total Downloads](http://poser.pugx.org/chistel/multi-payment/downloads)](https://packagist.org/packages/chistel/multi-payment) [![Latest Unstable Version](http://poser.pugx.org/chistel/multi-payment/v/unstable)](https://packagist.org/packages/chistel/multi-payment) [![License](http://poser.pugx.org/chistel/multi-payment/license)](https://packagist.org/packages/chistel/multi-payment) [![PHP Version Require](http://poser.pugx.org/chistel/multi-payment/require/php)](https://packagist.org/packages/chistel/multi-payment)
+
 
 This is a very simple and light package that allows you to add multiple payment methods in your application without having to use lots of conditional statements.
 
