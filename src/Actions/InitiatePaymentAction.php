@@ -29,17 +29,21 @@ class InitiatePaymentAction
     /**
      * @param $payer
      * @param string $gatewayProvider
-     * @param array  $purchaseData
-     *
+     * @param array $purchaseData
+     * @param array $params
+     * @return Response|RedirectResponse
      * @throws InvalidGatewayDriverException
      * @throws UnSupportedGatewayException
-     *
-     * @return Response|RedirectResponse
      */
-    public function execute($payer, string $gatewayProvider, array $purchaseData): Response|RedirectResponse
-    {
+    public function execute(
+        $payer,
+        string $gatewayProvider,
+        array $purchaseData,
+        array $params = []
+    ): Response|RedirectResponse {
         $gateway = $this->gatewayManager->create($gatewayProvider);
         $response = $gateway->setPayer($payer)
+            ->setGatewayParameters($params)
             ->purchase($purchaseData);
 
         if ($response->isRedirect()) {

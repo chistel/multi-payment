@@ -39,8 +39,7 @@ abstract class AbstractGateway
 
     /**
      * @param array $parameters
-     *
-     * @return AbstractGateway
+     * @return $this
      */
     public function setGatewayParameters(array $parameters = []): static
     {
@@ -72,7 +71,7 @@ abstract class AbstractGateway
 
     protected function cacheKey(): string
     {
-        return 'payment-'.$this->payer;
+        return 'payment-' . $this->payer;
     }
 
     /**

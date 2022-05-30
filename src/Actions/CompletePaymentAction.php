@@ -28,18 +28,16 @@ class CompletePaymentAction
     /**
      * @param string $gatewayProvider
      * @param $payer
-     * @param array $gatewayParameters
-     *
+     * @param array $params
+     * @return Response
      * @throws InvalidGatewayDriverException
      * @throws UnSupportedGatewayException
-     *
-     * @return Response
      */
-    public function execute(string $gatewayProvider, $payer, array $gatewayParameters = []): Response
+    public function execute(string $gatewayProvider, $payer, array $params = []): Response
     {
         $gateway = $this->gatewayManager->create($gatewayProvider);
         $response = $gateway->setPayer($payer)
-            ->setGatewayParameters($gatewayParameters)
+            ->setGatewayParameters($params)
             ->complete();
 
         if ($response->success()) {

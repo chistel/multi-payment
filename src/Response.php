@@ -16,11 +16,11 @@ use Chistel\MultiPayment\Contracts\Response as ResponseInterface;
 class Response implements ResponseInterface
 {
     /**
-     * @param bool        $success
+     * @param bool $success
      * @param string|null $message
      * @param string|null $transactionRef
-     * @param float       $amount
-     * @param string      $currency
+     * @param float $amount
+     * @param string $currency
      */
     public function __construct(
         protected bool $success,
