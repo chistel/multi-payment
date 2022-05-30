@@ -2,7 +2,7 @@
 [![Latest Stable Version](http://poser.pugx.org/chistel/multi-payment/v)](https://packagist.org/packages/chistel/multi-payment) [![Total Downloads](http://poser.pugx.org/chistel/multi-payment/downloads)](https://packagist.org/packages/chistel/multi-payment) [![Latest Unstable Version](http://poser.pugx.org/chistel/multi-payment/v/unstable)](https://packagist.org/packages/chistel/multi-payment) [![License](http://poser.pugx.org/chistel/multi-payment/license)](https://packagist.org/packages/chistel/multi-payment) [![PHP Version Require](http://poser.pugx.org/chistel/multi-payment/require/php)](https://packagist.org/packages/chistel/multi-payment)
 
 
-This is a very simple and light package that allows you to add multiple payment methods in your application without having to use lots of conditional statements.
+This is a very simple and light package that allows you to add multiple payment methods in your application without having to use lots of conditional statements and is library agnostic.
 
 With this package, you can keep the uniformity of initiating and verifying payments.
 
@@ -47,7 +47,41 @@ return [
 
 ## Usage
 
-check out it usage in the [Comprehensive demo repository](https://github.com/chistel/payment-demo) 
+First create a gateway class of your choice with extends ``` Chistel\MultiPayment\AbstractGateway``` which should implement the purchase and complete method.
+A couple of action classes for initiating and completing payments were also made available.
+
+Based on the action classes, there are also events which can be used for listeners after success or failed payments. They return the gateway name, payer and the gateway response.
+
+The sample below shows how the events get used via the EventProvider
+```php
+  PaymentWasSuccessful::class => [
+            PaymentSuccessfulListener::class
+        ],
+        PaymentWasUnsuccessful::class => [
+            PaymentUnsuccessfulListener::class
+        ]
+  ]
+
+```
+
+And your listener should be similar to the sample below
+
+```php
+class PaymentSuccessfulListener
+{
+    public function handle(PaymentWasSuccessful $event)
+    {
+        $payer = $event->user;
+        $response = $event->responses
+        $provider = $event->gateway;
+        
+        // Other code you want to added
+    }
+}
+```
+
+
+check out a full usage in the [Comprehensive demo repository](https://github.com/chistel/payment-demo) 
 
 ## Tests
 
